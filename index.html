@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>migrate to firebase</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="btnCreateUser()">create user w/ mail&pass</button><br>
+    {{count}}<br>
+    open js console
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  <script>
+    const config = {
+
+      // paste your firebase snippet
+
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: ""
+    }
+    const auth = firebase.initializeApp(config).auth()
+    new Vue({
+      el: '#app',
+      data: {
+        count: 0,
+        mailindex: 0,
+        passindex: 1,
+        CSV: [
+
+          // paste your modified csv
+          // example:
+          // ['test@tes.com','password', ... ],
+          // ['test2@tes.com','password2', ... ]
+
+
+        ],
+      },
+      methods: {
+        createUser(mail, pass) {
+          const promise = auth.createUserWithEmailAndPassword(mail, pass);
+          promise.then(() => {
+            console.log('created', mail)
+          },(error) => {
+            const message = error.message
+            console.log(message)
+            console.log(error)
+          })
+        },
+        btnCreateUser() {
+          const li = this.CSV
+          console.log(this.count, ' / ', li.length)
+          this.createUser(li[this.count][this.mailindex], li[this.count][this.passindex])
+          this.count++
+        },
+      }
+    })
+  </script>
+</body>
+</html>
