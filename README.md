@@ -1,7 +1,7 @@
 # import-mail-and-pass-to-firebase
 
->import user mail&password(plain text) from CSV to firebase auth
->and you need not to care about UID
+>import user mail&password(**plain text**) from CSV to firebase auth   
+>and you **need not to care about UID**
 
 ## Requirements
 
@@ -37,7 +37,7 @@ and add `['` on first and remove excess `['` on last
 ### Paste CSV array 
 
 open `index.html` and paste it   
-you must set mail/password index number where there are
+you must set **mail/password index number** where there are
 
 ### Firebase Setting 
 open `index.html` and paste your firebase snippet
@@ -52,7 +52,7 @@ $ live-server                 # open localhost:8080 in your browser
 click the button on the page   
 you can import one user per click   
    
-if clicking too often, 'too-many-request' error occured   
+if clicking too often, '**too-many-request**' error occured   
 maybe about 15click / 10min is limit     
 ## To Do(but may not do :-P)
 
