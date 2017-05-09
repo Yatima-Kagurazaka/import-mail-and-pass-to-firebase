@@ -1,11 +1,11 @@
-# import-mail-pass-to-firebase
+# import-mail-and-pass-to-firebase
 
 >import user mail&password(plain text) from CSV to firebase auth
 >and you need not to care about UID
 
 ## Requirements
 
-- recommended: keyboard macro (so primitive! :P)
+- recommended: keyboard macro (so primitive! :-P)
 
 ## Setup
 
@@ -54,7 +54,7 @@ you can import one user per click
    
 if clicking too often, 'too-many-request' error occured   
 maybe about 15click / 10min is limit     
-## To Do(but may not do :p)
+## To Do(but may not do :-P)
 
 - direct reading from CSV
 - loop processing
